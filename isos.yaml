@@ -1,0 +1,139 @@
+isos:
+  NYISO:
+    tz: US/Eastern
+    gate_local_hour: 24
+    locations:
+      - CAPITL
+      - CENTRL
+      - DUNWOD
+      - GENESE
+      - "H Q"
+      - HUD VL
+      - LONGIL
+      - MHK VL
+      - MILLWD
+      - "N.Y.C."
+      - NORTH
+      - NPX
+      - "O H"
+      - PJM
+      - WEST
+    load_forecast:
+      mode: system_column
+      column: Load Forecast
+    lmp_components:
+      energy: Energy
+      congestion: Congestion
+      loss: Loss
+  ISONE:
+    tz: US/Eastern
+    gate_local_hour: 24
+    locations:
+      - .Z.CONNECTICUT
+      - .Z.MAINE
+      - .Z.NEMASSBOST
+      - .Z.NEWHAMPSHIRE
+      - .Z.RHODEISLAND
+      - .Z.SEMASS
+      - .Z.VERMONT
+      - .Z.WCMASS
+    load_forecast:
+      mode: system_column
+      column: Load Forecast
+    lmp_components:
+      energy: Energy
+      congestion: Congestion
+      loss: Loss
+  MISO:
+    tz: EST
+    gate_local_hour: 24
+    locations:
+      - ARKANSAS.HUB
+      - ILLINOIS.HUB
+      - INDIANA.HUB
+      - LOUISIANA.HUB
+      - MICHIGAN.HUB
+      - MINN.HUB
+      - MS.HUB
+      - TEXAS.HUB
+    load_forecast:
+      mode: system_column
+      column: MISO MTLF
+      zonal_columns:
+        - LRZ1 MTLF
+        - LRZ2_7 MTLF
+        - LRZ3_5 MTLF
+        - LRZ4 MTLF
+        - LRZ6 MTLF
+        - LRZ8_9_10 MTLF
+    lmp_components:
+      energy: Energy
+      congestion: Congestion
+      loss: Loss
+  PJM:
+    tz: US/Eastern
+    gate_local_hour: 24
+    locations:
+      - AECO
+      - AEP
+      - APS
+      - ATSI
+      - BGE
+      - COMED
+      - DAY
+      - DEOK
+      - DOM
+      - DPL
+      - DUQ
+      - EKPC
+      - JCPL
+      - METED
+      - OVEC
+      - PECO
+      - PENELEC
+      - PEPCO
+      - PPL
+      - PSEG
+      - RECO
+    load_forecast:
+      mode: none
+    lmp_components:
+      energy: Energy
+      congestion: Congestion
+      loss: Loss
+  ERCOT:
+    tz: US/Central
+    gate_local_hour: 24
+    lmp_column: SPP
+    locations:
+      - LZ_AEN
+      - LZ_CPS
+      - LZ_HOUSTON
+      - LZ_LCRA
+      - LZ_NORTH
+      - LZ_RAYBN
+      - LZ_SOUTH
+      - LZ_WEST
+    load_forecast:
+      mode: none
+  CAISO:
+    tz: US/Pacific
+    locations:
+      - DLAP_PGAE-APND
+      - DLAP_SCE-APND
+      - DLAP_SDGE-APND
+      - DLAP_VEA-APND
+    load_forecast:
+      mode: system_column
+      column: Load Forecast
+    lmp_components:
+      energy: Energy
+      congestion: Congestion
+      loss: Loss
+    gate_local_hour: 24
+splits:
+  train_end: "2023-12-31"
+  val_end: "2024-12-31"
+gas_price:
+  mode: shared_national
+  lag_days: 2
